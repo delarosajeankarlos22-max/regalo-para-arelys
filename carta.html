@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Una sorpresa para Arelys ❤️</title>
+
+  <title>wabi sabi❤️</title>
 
   <style>
     * {
@@ -14,70 +15,95 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #18000d, #4b0025);
+      background: radial-gradient(circle at center, #65002f, #17000d 70%);
       color: white;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
     }
 
     .contenedor {
       width: 90%;
       max-width: 500px;
+      z-index: 2;
     }
 
     h1 {
+      font-size: 38px;
       margin-bottom: 15px;
-      font-size: 32px;
     }
 
-    .subtitulo {
-      color: #ffd6e5;
-      margin-bottom: 35px;
-    }
-
-    .opciones {
-      display: grid;
-      gap: 15px;
-    }
-
-    .boton {
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 20px;
-      background: rgba(255,255,255,.08);
-      color: white;
+    .texto {
+      color: #ffd9e7;
       font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 16px 28px;
+      border-radius: 50px;
+      background: #ff2f75;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
       cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 47, 117, .5);
       transition: .3s;
     }
 
-    .boton:hover {
-      transform: scale(1.04);
-      background: rgba(255, 47, 117, .25);
+    button:hover {
+      transform: scale(1.08);
     }
 
-    #mensaje {
+    #sorpresa {
       display: none;
       margin-top: 30px;
       padding: 25px;
-      border-radius: 20px;
       background: rgba(0,0,0,.25);
-      line-height: 1.7;
-      animation: aparecer .6s ease;
+      border-radius: 25px;
+      animation: aparecer 1s ease;
+    }
+
+    #sorpresa p {
+      font-size: 19px;
+      line-height: 1.8;
+      color: #ffe5ee;
+    }
+
+    .corazon {
+      position: fixed;
+      bottom: -30px;
+      font-size: 25px;
+      animation: subir 5s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+      }
     }
 
     @keyframes aparecer {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(.8);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
       }
     }
   </style>
@@ -89,52 +115,68 @@
 
     <h1>Arelys ❤️</h1>
 
-    <p class="subtitulo">
-      Hay algunas cosas que quiero que descubras...
+    <p class="texto">
+      Llegaste hasta aquí...
+      <br><br>
+      Pero todavía queda una cosa que quiero decirte.
     </p>
 
-    <div class="opciones">
+    <button onclick="abrirSorpresa()">
+      ✨ Descubrir sorpresa
+    </button>
 
-      <button class="boton" onclick="mostrar(1)">
-        💭 Algo que quiero decirte
-      </button>
+    <div id="sorpresa">
 
-      <button class="boton" onclick="mostrar(2)">
-        ❤️ Algo que siento
-      </button>
-
-      <button class="boton" onclick="mostrar(3)">
-        🔐 Una última sorpresa
-      </button>
+      <p>
+       En verdad quiero tener un futuro contigo no quiero ni
+        necesito a nadie mas,por lo que veo la distancia no 
+        imoide nuestro amor ,al contrario lo hace mas fuerte,
+        siento que te amo mas con cada dia que pasa,espero y dios
+        tenga planes para nosotros dos y que uno de esos sea que
+        nosotros estemos juntos pase lo que pase te amo demasiado mi princesa. ❤️
+        <br><br>
+        Gracias por estar a mi lado y ser una persona demasiado buena conmigo
+        <br><br>
+        — Para bby  🫶
+      </p>
 
     </div>
-
-    <div id="mensaje"></div>
 
   </div>
 
   <script>
-    function mostrar(numero) {
 
-      const mensaje = document.getElementById("mensaje");
+    function abrirSorpresa() {
 
-      if (numero === 1) {
-        mensaje.innerHTML =
-        "A veces no encuentro las palabras exactas para decirte todo lo que siento, pero quiero que sepas que tenerte en mi vida significa muchísimo para mí. ❤️";
-      }
+      document.getElementById("sorpresa").style.display = "block";
 
-      if (numero === 2) {
-        mensaje.innerHTML =
-        "No quiero que este regalo sea solamente una página bonita. Quiero que cuando lo veas recuerdes que detrás de cada palabra hay alguien que pensó en ti y quiso hacerte sonreír. 🫶";
-      }
+      crearCorazones();
 
-      if (numero === 3) {
-        mensaje.innerHTML =
-        "Esto todavía no termina... 👀❤️<br><br>La verdadera sorpresa viene después.";
-      }
-
-      mensaje.style.display = "block";
     }
+
+    function crearCorazones() {
+
+      for (let i = 0; i < 25; i++) {
+
+        const corazon = document.createElement("div");
+
+        corazon.className = "corazon";
+        corazon.innerHTML = "❤️";
+
+        corazon.style.left = Math.random() * 100 + "vw";
+        corazon.style.animationDuration =
+          (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+          corazon.remove();
+        }, 7000);
+
+      }
+
+    }
+
   </script>
 
 </body>
