@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Arelys ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #12000a, #3b001d, #16000d);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      animation: aparecer 2s ease;
+    }
+
+    .corazon {
+      font-size: 70px;
+      animation: latir 1.5s infinite;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ffd9e7;
+      margin-bottom: 35px;
+    }
+
+    button {
+      border: none;
+      background: #ff2f75;
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(255, 47, 117, 0.5);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    @keyframes latir {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+    <div class="corazon">❤️</div>
+
+    <h1>Para ti, Arelys</h1>
+
+    <p>
+      Preparé algo para ti...
+      <br>
+      No es simplemente una página,
+      es un pequeño pedacito de todo lo que siento por ti.
+    </p>
+
+    <button onclick="entrar()">
+      Abrir mi regalo 💌
+    </button>
+  </div>
+
+  <script>
+    function entrar() {
+      alert("Esto apenas comienza... ❤️");
+    }
+  </script>
+
+</body>
+</html>
