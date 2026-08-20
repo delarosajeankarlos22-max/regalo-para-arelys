@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una sorpresa para Arelys ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #18000d, #4b0025);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contenedor {
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    .subtitulo {
+      color: #ffd6e5;
+      margin-bottom: 35px;
+    }
+
+    .opciones {
+      display: grid;
+      gap: 15px;
+    }
+
+    .boton {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      background: rgba(255,255,255,.08);
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .boton:hover {
+      transform: scale(1.04);
+      background: rgba(255, 47, 117, .25);
+    }
+
+    #mensaje {
+      display: none;
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(0,0,0,.25);
+      line-height: 1.7;
+      animation: aparecer .6s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <h1>Arelys ❤️</h1>
+
+    <p class="subtitulo">
+      Hay algunas cosas que quiero que descubras...
+    </p>
+
+    <div class="opciones">
+
+      <button class="boton" onclick="mostrar(1)">
+        💭 Algo que quiero decirte
+      </button>
+
+      <button class="boton" onclick="mostrar(2)">
+        ❤️ Algo que siento
+      </button>
+
+      <button class="boton" onclick="mostrar(3)">
+        🔐 Una última sorpresa
+      </button>
+
+    </div>
+
+    <div id="mensaje"></div>
+
+  </div>
+
+  <script>
+    function mostrar(numero) {
+
+      const mensaje = document.getElementById("mensaje");
+
+      if (numero === 1) {
+        mensaje.innerHTML =
+        "A veces no encuentro las palabras exactas para decirte todo lo que siento, pero quiero que sepas que tenerte en mi vida significa muchísimo para mí. ❤️";
+      }
+
+      if (numero === 2) {
+        mensaje.innerHTML =
+        "No quiero que este regalo sea solamente una página bonita. Quiero que cuando lo veas recuerdes que detrás de cada palabra hay alguien que pensó en ti y quiso hacerte sonreír. 🫶";
+      }
+
+      if (numero === 3) {
+        mensaje.innerHTML =
+        "Esto todavía no termina... 👀❤️<br><br>La verdadera sorpresa viene después.";
+      }
+
+      mensaje.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
