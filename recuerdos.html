@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>my love ❤️</title>
+  <title>Nuestros recuerdos ❤️</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
       background: linear-gradient(135deg, #18000d, #52002a);
       color: white;
@@ -23,14 +21,13 @@
     }
 
     h1 {
+      margin: 0 0 10px;
       font-size: 34px;
-      margin-bottom: 10px;
     }
 
     .subtitulo {
       color: #ffd6e5;
       margin-bottom: 30px;
-      line-height: 1.5;
     }
 
     .galeria {
@@ -41,29 +38,27 @@
 
     .foto {
       display: none;
-      animation: aparecer 0.7s ease;
     }
 
     .foto.activa {
       display: block;
+      animation: aparecer 0.6s ease;
     }
 
     .foto img {
-      display: block;
       width: 100%;
       max-width: 500px;
-      height: auto;
       max-height: 60vh;
       object-fit: contain;
-      margin: auto;
       border-radius: 22px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+      display: block;
+      margin: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     }
 
     .numero {
-      margin-top: 15px;
       color: #ffc5da;
-      font-size: 15px;
+      margin-top: 15px;
     }
 
     .botones {
@@ -71,7 +66,6 @@
       justify-content: center;
       gap: 10px;
       margin-top: 25px;
-      flex-wrap: wrap;
     }
 
     button {
@@ -87,12 +81,11 @@
 
     button:disabled {
       opacity: 0.4;
-      cursor: default;
     }
 
     .volver {
-      margin-top: 25px;
-      background: rgba(255,255,255,0.12);
+      margin-top: 20px;
+      background: rgba(255,255,255,0.15);
     }
 
     @keyframes aparecer {
@@ -111,41 +104,40 @@
 
 <body>
 
-  <h1>my hearth❤️</h1>
+  <h1>Nuestros recuerdos ❤️</h1>
 
   <p class="subtitulo">
-  la mujer que amo❤️
+    Cada foto guarda un momento especial.
   </p>
 
   <div class="galeria">
 
     <div class="foto activa">
-      <img src="./foto1.jpg" alt="Nuestro recuerdo 1">
+      <img src="foto1.jpg" alt="Recuerdo 1">
       <p class="numero">1 / 5</p>
     </div>
 
     <div class="foto">
-      <img src="./foto2.jpg" alt="Nuestro recuerdo 2">
+      <img src="foto2.jpg" alt="Recuerdo 2">
       <p class="numero">2 / 5</p>
     </div>
 
     <div class="foto">
-      <img src="./foto3.jpg" alt="Nuestro recuerdo 3">
+      <img src="foto3.jpg" alt="Recuerdo 3">
       <p class="numero">3 / 5</p>
     </div>
 
     <div class="foto">
-      <img src="./foto4.jpg" alt="Nuestro recuerdo 4">
+      <img src="foto4.jpg" alt="Recuerdo 4">
       <p class="numero">4 / 5</p>
     </div>
 
     <div class="foto">
-      <img src="./foto5.jpg" alt="Nuestro recuerdo 5">
+      <img src="foto5.jpg" alt="Recuerdo 5">
       <p class="numero">5 / 5</p>
     </div>
 
     <div class="botones">
-
       <button id="anterior" onclick="cambiar(-1)" disabled>
         ← Anterior
       </button>
@@ -153,33 +145,26 @@
       <button id="siguiente" onclick="cambiar(1)">
         Siguiente →
       </button>
-
     </div>
 
     <button class="volver" onclick="volverCarta()">
       ❤️ Volver a la sorpresa
     </button>
-<button class="final" onclick="irFinal()">
-  💌 Hay algo más...
-</button>
-    
+
   </div>
 
   <script>
-
     let actual = 0;
 
     const fotos = document.querySelectorAll(".foto");
-
     const anterior = document.getElementById("anterior");
-
     const siguiente = document.getElementById("siguiente");
 
     function cambiar(direccion) {
 
       fotos[actual].classList.remove("activa");
 
-      actual += direccion;
+      actual = actual + direccion;
 
       if (actual < 0) {
         actual = 0;
@@ -192,25 +177,12 @@
       fotos[actual].classList.add("activa");
 
       anterior.disabled = actual === 0;
-
       siguiente.disabled = actual === fotos.length - 1;
-
     }
 
     function volverCarta() {
-
       window.location.href = "carta.html";
-
     }
-function irFinal() {
-
-  window.location.href = "final.html";
-
-}
-    .final {
-  margin-top: 12px;
-  background: #ff4f91;
-}
   </script>
 
 </body>
