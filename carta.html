@@ -125,7 +125,11 @@
     </button>
 
     <div id="sorpresa">
+<br><br>
 
+<button onclick="irRecuerdos()">
+  📸 Ver nuestros recuerdos
+</button>
       <p>
         En verdad quiero tener un futuro contigo,
         no quiero ni necesito a nadie más.
@@ -157,7 +161,9 @@
       document.getElementById("sorpresa").style.display = "block";
 
       crearCorazones();
-
+function irRecuerdos() {
+  window.location.href = "recuerdos.html";
+}
     }
 
     function crearCorazones() {
