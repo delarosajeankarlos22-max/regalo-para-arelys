@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para Arelys ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 35%, #700035, #16000c 75%);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+      overflow-x: hidden;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .corazon-grande {
+      font-size: 75px;
+      margin-bottom: 20px;
+      animation: latir 1.5s infinite;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      color: #ffd9e7;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 16px 28px;
+      border-radius: 50px;
+      background: #ff2f75;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(255, 47, 117, .45);
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+    }
+
+    #mensaje {
+      display: none;
+      margin-top: 30px;
+      padding: 28px 22px;
+      background: rgba(0, 0, 0, .28);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 25px;
+      animation: aparecer 1s ease;
+    }
+
+    #mensaje p {
+      color: #ffe6ef;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .firma {
+      margin-top: 22px;
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .corazon-flotante {
+      position: fixed;
+      bottom: -40px;
+      font-size: 25px;
+      pointer-events: none;
+      animation: subir linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes latir {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes subir {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <div class="corazon-grande">
+      ❤️
+    </div>
+
+    <h1>Y llegaste al final...</h1>
+
+    <p class="intro">
+      Pero en realidad, este no es el final.
+      <br><br>
+      Es solamente una pequeña forma de decirte
+      todo lo que significas para mí.
+    </p>
+
+    <button onclick="abrirMensaje()">
+      💌 Abrir mi último mensaje
+    </button>
+
+    <div id="mensaje">
+
+      <p>
+        En verdad quiero tener un futuro contigo,
+        no quiero ni necesito a nadie más.
+        <br><br>
+
+        Por lo que veo, la distancia no impide
+        nuestro amor; al contrario, lo hace más fuerte.
+        <br><br>
+
+        Siento que te amo más con cada día que pasa,
+        y espero que Dios tenga planes para nosotros dos.
+        <br><br>
+
+        Que uno de ellos sea que estemos juntos
+        pase lo que pase.
+        <br><br>
+
+        Gracias por cada momento, cada conversación,
+        cada recuerdo y cada sonrisa.
+        <br><br>
+
+        Espero que algún día podamos mirar atrás
+        y recordar todo esto como el comienzo
+        de una historia muy bonita.
+      </p>
+
+      <div class="firma">
+        Te amo demasiado, mi princesa. ❤️
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function abrirMensaje() {
+
+      document.getElementById("mensaje").style.display = "block";
+
+      crearCorazones();
+
+    }
+
+    function crearCorazones() {
+
+      for (let i = 0; i < 40; i++) {
+
+        const corazon = document.createElement("div");
+
+        corazon.className = "corazon-flotante";
+        corazon.innerHTML = "❤️";
+
+        corazon.style.left =
+          Math.random() * 100 + "vw";
+
+        corazon.style.animationDuration =
+          (3 + Math.random() * 5) + "s";
+
+        corazon.style.fontSize =
+          (18 + Math.random() * 25) + "px";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+          corazon.remove();
+        }, 8000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
