@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>wabi sabi ❤️</title>
+
+  <title>Para Arelys ❤️</title>
 
   <style>
     * {
@@ -21,57 +22,66 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
+      padding: 25px 15px;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .contenedor {
-      width: 90%;
-      max-width: 500px;
-      z-index: 2;
+      width: 100%;
+      max-width: 520px;
+      padding: 20px 0;
     }
 
     h1 {
-      font-size: 38px;
-      margin-bottom: 15px;
+      font-size: clamp(30px, 8vw, 40px);
+      margin-bottom: 12px;
     }
 
     .texto {
       color: #ffd9e7;
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     button {
       border: none;
-      padding: 16px 28px;
+      padding: 15px 24px;
       border-radius: 50px;
       background: #ff2f75;
       color: white;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 0 25px rgba(255, 47, 117, .5);
       transition: .3s;
+      margin: 5px;
     }
 
     button:hover {
-      transform: scale(1.08);
+      transform: scale(1.05);
     }
 
     #sorpresa {
       display: none;
-      margin-top: 30px;
-      padding: 25px;
-      background: rgba(0,0,0,.25);
+      margin-top: 25px;
+      padding: 25px 20px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.1);
       border-radius: 25px;
-      animation: aparecer 1s ease;
+      animation: aparecer .8s ease;
     }
 
     #sorpresa p {
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.8;
       color: #ffe5ee;
+    }
+
+    .boton-recuerdos {
+      margin-top: 25px;
+      background: #ff4f91;
     }
 
     .corazon {
@@ -80,6 +90,7 @@
       font-size: 25px;
       animation: subir 5s linear forwards;
       pointer-events: none;
+      z-index: 1;
     }
 
     @keyframes subir {
@@ -97,12 +108,12 @@
     @keyframes aparecer {
       from {
         opacity: 0;
-        transform: scale(.8);
+        transform: translateY(20px) scale(.96);
       }
 
       to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0) scale(1);
       }
     }
   </style>
@@ -125,11 +136,7 @@
     </button>
 
     <div id="sorpresa">
-<br><br>
 
-<button onclick="irRecuerdos()">
-  📸 Ver nuestros recuerdos
-</button>
       <p>
         En verdad quiero tener un futuro contigo,
         no quiero ni necesito a nadie más.
@@ -150,6 +157,10 @@
         Te amo demasiado, mi princesa. ❤️
       </p>
 
+      <button class="boton-recuerdos" onclick="irRecuerdos()">
+        📸 Ver nuestros recuerdos
+      </button>
+
     </div>
 
   </div>
@@ -161,9 +172,13 @@
       document.getElementById("sorpresa").style.display = "block";
 
       crearCorazones();
-function irRecuerdos() {
-  window.location.href = "recuerdos.html";
-}
+
+    }
+
+    function irRecuerdos() {
+
+      window.location.href = "recuerdos.html";
+
     }
 
     function crearCorazones() {
